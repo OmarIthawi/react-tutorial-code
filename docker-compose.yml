@@ -1,0 +1,10 @@
+web:
+  build: .
+
+  command: browser-sync start --server --port 8000 --files "*.html, scripts/*.js"
+
+  volumes:
+    - ".:/code/"
+
+  ports:
+    - "8000:8000"
