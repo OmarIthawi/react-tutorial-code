@@ -1,0 +1,11 @@
+body {
+    padding: 20px
+}
+
+input, label {
+  margin: 0.2em;
+}
+
+th, td {
+    padding: 0.2em;
+}

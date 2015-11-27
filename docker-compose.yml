@@ -1,13 +1,16 @@
 ui:
   build: ui
 
-  command: browser-sync start --server --port 8000 --files "*.html, scripts/*.js"
+  command: browser-sync start --server --port 8000 --directory --files "*.html, scripts/*.js"
 
   volumes:
     - "./ui/:/code/"
 
   ports:
     - "8000:8000"
+
+  links:
+    - api
 
 mongo:
   image: mongo:2.4
@@ -25,7 +28,7 @@ api:
     - "8001:8001"
 
   links:
-    - "mongo:mongo"
+    - mongo
 
   volumes:
     - "./api/:/code/"
